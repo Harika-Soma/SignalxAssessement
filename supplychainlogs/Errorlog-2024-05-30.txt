@@ -2,3 +2,15 @@ ERROR: 2024/05/30 11:53:17 supplychain.go:123: error while reading shipment conn
 ERROR: 2024/05/30 11:53:17 schema.resolvers.go:187: error while reading the shpiment data no data found or error while reading shipment
 ERROR: 2024/05/30 11:55:57 supplychain.go:123: error while reading shipment mongo: no documents in result
 ERROR: 2024/05/30 11:55:57 schema.resolvers.go:187: error while reading the shpiment data no data found or error while reading shipment
+ERROR: 2024/05/30 13:12:16 supplychain.go:29: error while reading user mongo: no documents in result
+ERROR: 2024/05/30 13:12:16 schema.resolvers.go:25: error reading the login data from user mongo: no documents in result
+ERROR: 2024/05/30 13:12:27 supplychain.go:29: error while reading user mongo: no documents in result
+ERROR: 2024/05/30 13:12:27 schema.resolvers.go:25: error reading the login data from user mongo: no documents in result
+ERROR: 2024/05/30 13:12:29 supplychain.go:29: error while reading user mongo: no documents in result
+ERROR: 2024/05/30 13:12:29 schema.resolvers.go:25: error reading the login data from user mongo: no documents in result
+ERROR: 2024/05/30 13:40:59 supplychain.go:29: error while reading user mongo: no documents in result
+ERROR: 2024/05/30 13:41:01 supplychain.go:29: error while reading user mongo: no documents in result
+ERROR: 2024/05/30 13:45:23 supplychain.go:44: error while updating user update document must contain key beginning with '$'
+ERROR: 2024/05/30 13:45:23 schema.resolvers.go:35: error while creating user update document must contain key beginning with '$'
+ERROR: 2024/05/30 13:46:04 supplychain.go:44: error while updating user write exception: write errors: [Performing an update on the path '_id' would modify the immutable field '_id']
+ERROR: 2024/05/30 13:46:04 schema.resolvers.go:35: error while creating user write exception: write errors: [Performing an update on the path '_id' would modify the immutable field '_id']

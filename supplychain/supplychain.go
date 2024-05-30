@@ -7,6 +7,8 @@ import (
 )
 
 type Store interface {
+	GetUser(string, string) (*model.LoginData, error)
+	UpdateUser(*model.LoginData) error
 	AddInventoryItem(string, string, int, string) (primitive.ObjectID, error)
 	UpdateInventoryItem(primitive.ObjectID, *string, *string, *int, *string) (primitive.ObjectID, error)
 	DeleteInventoryItem(primitive.ObjectID) bool

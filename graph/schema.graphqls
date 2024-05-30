@@ -2,6 +2,16 @@
 #
 # https://gqlgen.com/getting-started/
 
+directive @goField(
+  forceResolver: Boolean
+  name: String
+) on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+
+# new directive
+directive @auth on FIELD_DEFINITION
+
+scalar Time
+
 type InventoryItem {
   id: ID!
   name: String!
@@ -26,18 +36,41 @@ type Supplier {
   email: String!
 }
 
+input UserLoginData {
+  email: String!
+  password: String!
+}
+
+type loginData {
+  id:ID!
+  email:String!
+  password:String!
+  loginTime:Time!
+}
+
 type Query {
-  inventoryItems(limit: Int!, offset: Int!): [InventoryItem!]!
-  shipment(id: ID!): Shipment
-  suppliers: [Supplier!]!
+  inventoryItems(limit: Int!, offset: Int!): [InventoryItem!]!  @goField(forceResolver: true)
+    @auth
+  shipment(id: ID!): Shipment  @goField(forceResolver: true)
+    @auth
+  suppliers: [Supplier!]!  @goField(forceResolver: true)
+    @auth
 }
 
 type Mutation {
-  addInventoryItem(name: String!, sku: String!, quantity: Int!, warehouse: String!): InventoryItem!
-  updateInventoryItem(id: ID!, name: String, sku: String, quantity: Int, warehouse: String): InventoryItem!
-  deleteInventoryItem(id: ID!): Boolean!
-  updateShipmentStatus(id: ID!, status: String!): Shipment!
-  addSupplier(name: String!, contactPerson: String!, phone: String!, email: String!): Supplier!
-  updateSupplier(id: ID!, name: String, contactPerson: String, phone: String, email: String): Supplier!
-  deleteSupplier(id: ID!): Boolean!
+  CreateUserLogin(input: UserLoginData!): String!
+  addInventoryItem(name: String!, sku: String!, quantity: Int!, warehouse: String!): InventoryItem!  @goField(forceResolver: true)
+    @auth
+  updateInventoryItem(id: ID!, name: String, sku: String, quantity: Int, warehouse: String): InventoryItem!  @goField(forceResolver: true)
+    @auth
+  deleteInventoryItem(id: ID!): Boolean!  @goField(forceResolver: true)
+    @auth
+  updateShipmentStatus(id: ID!, status: String!): Shipment!  @goField(forceResolver: true)
+    @auth
+  addSupplier(name: String!, contactPerson: String!, phone: String!, email: String!): Supplier!  @goField(forceResolver: true)
+    @auth
+  updateSupplier(id: ID!, name: String, contactPerson: String, phone: String, email: String): Supplier!  @goField(forceResolver: true)
+    @auth
+  deleteSupplier(id: ID!): Boolean!  @goField(forceResolver: true)
+    @auth
 }

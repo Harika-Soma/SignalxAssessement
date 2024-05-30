@@ -2,6 +2,10 @@
 
 package model
 
+import (
+	"time"
+)
+
 type InventoryItem struct {
 	ID        string `json:"id" bson:"_id"`
 	Name      string `json:"name" bson:"name"`
@@ -30,4 +34,16 @@ type Supplier struct {
 	ContactPerson string `json:"contactPerson" bson:"contactPerson"`
 	Phone         string `json:"phone" bson:"phone"`
 	Email         string `json:"email" bson:"email"`
+}
+
+type UserLoginData struct {
+	Email    string `json:"email" bson:"email"`
+	Password string `json:"password" bson:"password"`
+}
+
+type LoginData struct {
+	ID        string    `json:"id" bson:"_id"`
+	Email     string    `json:"email" bson:"email"`
+	Password  string    `json:"password" bson:"password"`
+	LoginTime time.Time `json:"loginTime" bson:"loginTime"`
 }

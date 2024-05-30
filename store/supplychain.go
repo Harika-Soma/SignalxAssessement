@@ -3,6 +3,7 @@ package store
 import (
 	"context"
 	"errors"
+	"fmt"
 	"supplychain/graph/model"
 	"supplychain/pkg/logs"
 
@@ -19,6 +20,32 @@ func NewSupplyChainStore(db *qmgo.Database) *SupplyChainStore {
 	return &SupplyChainStore{
 		db: db,
 	}
+}
+
+// This function is used to get the login data
+func (sc *SupplyChainStore) GetUser(email string, password string) (*model.LoginData, error) {
+	ctx := context.Background()
+	var loginData *model.LoginData
+	fmt.Println("received data", email, password)
+	if err := sc.db.Collection("users").Find(ctx, bson.M{"email": email, "password": password}).One(&loginData); err != nil {
+		logs.ErrorLogger.Println("error while reading user", err)
+		return nil, err
+	}
+	logs.InfoLogger.Println("received user login details", loginData)
+	return loginData, nil
+}
+
+// This function is used to update the user login details and time
+func (sc *SupplyChainStore) UpdateUser(loginData *model.LoginData) error {
+	ctx := context.Background()
+	id, _ := primitive.ObjectIDFromHex(loginData.ID)
+	err := sc.db.Collection("users").UpdateOne(ctx, bson.M{"_id": id}, bson.M{"$set": bson.M{"email": loginData.Email, "password": loginData.Password, "loginTime": loginData.LoginTime}})
+	if err != nil {
+		logs.ErrorLogger.Println("error while updating user", err)
+		return err
+	}
+	logs.InfoLogger.Println("updated user login")
+	return nil
 }
 
 // This function is used to create the invetory items with specific fields as params and returns the created id

@@ -8,10 +8,39 @@ import (
 	"context"
 	"errors"
 	"supplychain/graph/model"
+	"supplychain/pkg/jwt"
 	"supplychain/pkg/logs"
+	"time"
 
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
+
+// CreateUserLogin is the resolver for the CreateUserLogin field.
+func (r *mutationResolver) CreateUserLogin(ctx context.Context, input model.UserLoginData) (string, error) {
+	// This API is used to login the user to access the supply chain APIs
+	var loginData *model.LoginData = new(model.LoginData)
+	findData, err := r.SupplyChainStore.GetUser(input.Email, input.Password)
+	if err != nil {
+		logs.ErrorLogger.Println("error reading the login data from user", err)
+		return "", err
+	}
+	loginData.ID = findData.ID
+	loginData.Email = input.Email
+	loginData.Password = input.Password
+	loginData.LoginTime = time.Now()
+	logs.InfoLogger.Println("received login data in CreateUserLogin", loginData)
+	upErr := r.SupplyChainStore.UpdateUser(loginData)
+	if upErr != nil {
+		logs.ErrorLogger.Println("error while creating user", upErr)
+		return "", upErr
+	}
+	tokenString, err := jwt.GenerateToken(findData.ID)
+	if err != nil {
+		logs.ErrorLogger.Println("token generation error", err)
+		return "", err
+	}
+	return tokenString, nil
+}
 
 // AddInventoryItem is the resolver for the addInventoryItem field.
 func (r *mutationResolver) AddInventoryItem(ctx context.Context, name string, sku string, quantity int, warehouse string) (*model.InventoryItem, error) {
@@ -157,7 +186,7 @@ func (r *mutationResolver) DeleteSupplier(ctx context.Context, id string) (bool,
 		return false, err
 	}
 	ok := r.SupplyChainStore.DeleteSupplier(objID) // deleting the specific supplier using id
-	if ok {
+	if !ok {
 		return ok, errors.New("delete supplier is failed")
 	}
 	return ok, nil

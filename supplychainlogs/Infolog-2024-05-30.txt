@@ -22,3 +22,21 @@ INFO: 2024/05/30 11:58:16 supplychain.go:32: Created Inventory &{ObjectID("66581
 INFO: 2024/05/30 11:58:17 schema.resolvers.go:29: Received Added Inventory Item &{66581c80c4cd94076e68a90f bikes bk123 10 hyderbad}
 INFO: 2024/05/30 11:58:24 schema.resolvers.go:174: Received inventory data [0xc0002ee550 0xc0002ee5f0 0xc0002ee690]
 INFO: 2024/05/30 11:58:50 supplychain.go:90: deleted one inventory
+INFO: 2024/05/30 12:56:49 schema.resolvers.go:27: received login data in CreateUserLogin &{66582a39c0a8f3ed40b4be2f harika@gmail.com harika@123 2024-05-30 12:56:49.0534511 +0530 IST m=+10.007236301}
+INFO: 2024/05/30 12:56:49 supplychain.go:32: created user login &{66582a39c0a8f3ed40b4be2f}
+INFO: 2024/05/30 13:45:23 supplychain.go:34: received user login details &{66582963eba6826d025a43a3 harika@gmail.com harika@123 0001-01-01 00:00:00 +0000 UTC}
+INFO: 2024/05/30 13:45:23 schema.resolvers.go:32: received login data in CreateUserLogin &{66582963eba6826d025a43a3 harika@gmail.com harika@123 2024-05-30 13:45:23.0412726 +0530 IST m=+7.578553001}
+INFO: 2024/05/30 13:46:04 supplychain.go:34: received user login details &{66582963eba6826d025a43a3 harika@gmail.com harika@123 0001-01-01 00:00:00 +0000 UTC}
+INFO: 2024/05/30 13:46:04 schema.resolvers.go:32: received login data in CreateUserLogin &{66582963eba6826d025a43a3 harika@gmail.com harika@123 2024-05-30 13:46:04.1052739 +0530 IST m=+8.884077501}
+INFO: 2024/05/30 13:47:44 supplychain.go:34: received user login details &{66582963eba6826d025a43a3 harika@gmail.com harika@123 0001-01-01 00:00:00 +0000 UTC}
+INFO: 2024/05/30 13:47:44 schema.resolvers.go:32: received login data in CreateUserLogin &{66582963eba6826d025a43a3 harika@gmail.com harika@123 2024-05-30 13:47:44.1463438 +0530 IST m=+8.433243601}
+INFO: 2024/05/30 13:47:44 supplychain.go:47: updated user login
+INFO: 2024/05/30 14:08:09 supplychain.go:34: received user login details &{66582963eba6826d025a43a3 harika@gmail.com harika@123 2024-05-30 08:17:44.146 +0000 UTC}
+INFO: 2024/05/30 14:08:09 schema.resolvers.go:34: received login data in CreateUserLogin &{66582963eba6826d025a43a3 harika@gmail.com harika@123 2024-05-30 14:08:09.2973434 +0530 IST m=+8.743709801}
+INFO: 2024/05/30 14:08:09 supplychain.go:47: updated user login
+INFO: 2024/05/30 14:18:39 supplychain.go:59: Created Inventory &{ObjectID("66583d67733a16d2074a6a1c")}
+INFO: 2024/05/30 14:18:39 schema.resolvers.go:66: Received Added Inventory Item &{66583d67733a16d2074a6a1c bikes bk123 10 hyderbad}
+INFO: 2024/05/30 14:19:25 supplychain.go:71: updated inventory
+INFO: 2024/05/30 14:19:25 schema.resolvers.go:92: Received Updated Inventory Item &{66583d67733a16d2074a6a1c bikes bk123 20 delhi}
+INFO: 2024/05/30 14:19:44 supplychain.go:117: deleted one inventory
+INFO: 2024/05/30 14:19:54 schema.resolvers.go:211: Received inventory data []
