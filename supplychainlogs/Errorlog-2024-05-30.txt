@@ -1,0 +1,4 @@
+ERROR: 2024/05/30 11:53:17 supplychain.go:123: error while reading shipment connection(telematics-mongo1.evrides.in:22022[-102]) socket was unexpectedly closed: EOF
+ERROR: 2024/05/30 11:53:17 schema.resolvers.go:187: error while reading the shpiment data no data found or error while reading shipment
+ERROR: 2024/05/30 11:55:57 supplychain.go:123: error while reading shipment mongo: no documents in result
+ERROR: 2024/05/30 11:55:57 schema.resolvers.go:187: error while reading the shpiment data no data found or error while reading shipment

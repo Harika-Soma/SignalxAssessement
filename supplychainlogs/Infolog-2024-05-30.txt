@@ -1,0 +1,24 @@
+INFO: 2024/05/30 11:46:51 supplychain.go:32: Created Inventory &{ObjectID("665819d3a7ee3bba3a13d25c")}
+INFO: 2024/05/30 11:46:52 schema.resolvers.go:29: Received Added Inventory Item &{665819d3a7ee3bba3a13d25c vehicles  10 hyderbad}
+INFO: 2024/05/30 11:48:11 supplychain.go:32: Created Inventory &{ObjectID("66581a22a7ee3bba3a13d25d")}
+INFO: 2024/05/30 11:48:11 schema.resolvers.go:29: Received Added Inventory Item &{66581a22a7ee3bba3a13d25d vehicles  10 hyderbad}
+INFO: 2024/05/30 11:48:32 supplychain.go:44: updated inventory
+INFO: 2024/05/30 11:48:33 schema.resolvers.go:55: Received Updated Inventory Item &{665819d3a7ee3bba3a13d25c vehicles vh123 5 hyderbad}
+INFO: 2024/05/30 11:49:34 supplychain.go:44: updated inventory
+INFO: 2024/05/30 11:49:34 schema.resolvers.go:55: Received Updated Inventory Item &{66581a22a7ee3bba3a13d25d cars cr123 20 delhi}
+INFO: 2024/05/30 11:50:02 supplychain.go:32: Created Inventory &{ObjectID("66581a92a7ee3bba3a13d25e")}
+INFO: 2024/05/30 11:50:02 schema.resolvers.go:29: Received Added Inventory Item &{66581a92a7ee3bba3a13d25e bikes bk123 10 hyderbad}
+INFO: 2024/05/30 11:50:24 schema.resolvers.go:174: Received inventory data [0xc0003856d0]
+INFO: 2024/05/30 11:50:38 schema.resolvers.go:174: Received inventory data [0xc0003859f0]
+INFO: 2024/05/30 11:50:47 schema.resolvers.go:174: Received inventory data [0xc0004dc0a0 0xc0004dc140 0xc0004dc1e0]
+INFO: 2024/05/30 11:50:57 schema.resolvers.go:202: Received suppliers data []
+INFO: 2024/05/30 11:51:08 supplychain.go:90: deleted one inventory
+INFO: 2024/05/30 11:55:54 schema.resolvers.go:202: Received suppliers data []
+INFO: 2024/05/30 11:57:00 supplychain.go:32: Created Inventory &{ObjectID("66581c34a7ee3bba3a13d25f")}
+INFO: 2024/05/30 11:57:00 schema.resolvers.go:29: Received Added Inventory Item &{66581c34a7ee3bba3a13d25f bikes bk123 10 hyderbad}
+INFO: 2024/05/30 11:57:08 schema.resolvers.go:174: Received inventory data [0xc000532c80 0xc000532d20 0xc000532e60]
+INFO: 2024/05/30 11:57:18 supplychain.go:90: deleted one inventory
+INFO: 2024/05/30 11:58:16 supplychain.go:32: Created Inventory &{ObjectID("66581c80c4cd94076e68a90f")}
+INFO: 2024/05/30 11:58:17 schema.resolvers.go:29: Received Added Inventory Item &{66581c80c4cd94076e68a90f bikes bk123 10 hyderbad}
+INFO: 2024/05/30 11:58:24 schema.resolvers.go:174: Received inventory data [0xc0002ee550 0xc0002ee5f0 0xc0002ee690]
+INFO: 2024/05/30 11:58:50 supplychain.go:90: deleted one inventory

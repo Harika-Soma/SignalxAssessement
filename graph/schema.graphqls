@@ -1,0 +1,43 @@
+# GraphQL schema example
+#
+# https://gqlgen.com/getting-started/
+
+type InventoryItem {
+  id: ID!
+  name: String!
+  sku: String!
+  quantity: Int!
+  warehouse: String!
+}
+
+type Shipment {
+  id: ID!
+  origin: String!
+  destination: String!
+  status: String!
+  estimatedDelivery: String!
+}
+
+type Supplier {
+  id: ID!
+  name: String!
+  contactPerson: String!
+  phone: String!
+  email: String!
+}
+
+type Query {
+  inventoryItems(limit: Int!, offset: Int!): [InventoryItem!]!
+  shipment(id: ID!): Shipment
+  suppliers: [Supplier!]!
+}
+
+type Mutation {
+  addInventoryItem(name: String!, sku: String!, quantity: Int!, warehouse: String!): InventoryItem!
+  updateInventoryItem(id: ID!, name: String, sku: String, quantity: Int, warehouse: String): InventoryItem!
+  deleteInventoryItem(id: ID!): Boolean!
+  updateShipmentStatus(id: ID!, status: String!): Shipment!
+  addSupplier(name: String!, contactPerson: String!, phone: String!, email: String!): Supplier!
+  updateSupplier(id: ID!, name: String, contactPerson: String, phone: String, email: String): Supplier!
+  deleteSupplier(id: ID!): Boolean!
+}
